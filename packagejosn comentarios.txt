@@ -1,0 +1,11 @@
+{ //Dice como funciona el backend, define el proyecto Node.js, sus dependencias y algunas reglas de ejecucion
+  "name": "planning-push-backend", //Nombre del proyecto, sirve para identificar el proyecto, aparece si alguien lo instala como paquete
+  "private": true, //Indica que este proyecto es privado, evita que alguien pueda publicar este proyecto accidentalmente en npm
+  "type": "module", //Indica que el proyecto usa ES Modules, lo que significa que en el backend usamos import, from, no usamos require()
+  "dependencies": { //Bloque donde se listan los paquetes necesario9s para que el backend funcione
+    "@supabase/supabase-js": "^2.45.0", //SDK oficial de Supabase para JavaScript, el cual lo usamos para guardar las suscripciones push, guardar el planing, consultar
+     datos por familia. "^2.45.0" significa que se permite actualizar automaticamente a versiones 2.2.2 pero no a la 3.0 para evitar breaking changes(cambios de rotura)
+    "web-push": "^3.6.7" //Librería clave del proyecto, ya que nos permite firmar mensajes push con VAPID y enviar notificaciones Web Push a navegadores. Es la que
+     realmente envía las notificaciones desde el backend
+  }
+}
